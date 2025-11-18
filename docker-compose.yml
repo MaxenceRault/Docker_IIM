@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: recipes-mongo
+    restart: always
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: recipedb
+    networks:
+      - app-network    
+
+  backend:
+    build: ./backend
+    container_name: recipes-backend
+    restart: always
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URL: mongodb://mongodb:27017/recipedb
+    ports:
+      - "5001:5001"
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend
+    container_name: recipes-frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+
+volumes:
+  mongo_data:
