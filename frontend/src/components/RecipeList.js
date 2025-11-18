@@ -69,7 +69,7 @@ function RecipeList() {
           placeholder="Instructions"
         />
 
-        <button type="submit">➕ Ajouter une recette</button>
+        <button type="submit"> Ajouter une recette</button>
       </form>
 
       <h2>Recettes enregistrées</h2>
