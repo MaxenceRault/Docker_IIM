@@ -46,7 +46,7 @@ function RecipeList() {
 
   return (
     <div className="container">
-      <h1>🍽️ Gérer les Recettes</h1>
+      <h1>Gérer les Recettes</h1>
 
       <form onSubmit={addRecipe} className="recipe-form">
         <input
@@ -72,7 +72,7 @@ function RecipeList() {
         <button type="submit">➕ Ajouter une recette</button>
       </form>
 
-      <h2>📃 Recettes enregistrées</h2>
+      <h2>Recettes enregistrées</h2>
 
       {recipes.map((r) => (
         <div key={r._id} className="recipe-item">
@@ -82,7 +82,7 @@ function RecipeList() {
           </p>
           <p>{r.instructions}</p>
           <button className="btn-delete" onClick={() => deleteRecipe(r._id)}>
-            🗑 Supprimer
+            Supprimer
           </button>
         </div>
       ))}

@@ -24,10 +24,10 @@ function RandomRecipe() {
 
   return (
     <div className="container">
-      <h1>🎲 Recette Aléatoire</h1>
+      <h1>Recette Aléatoire</h1>
 
       <button onClick={fetchRandomRecipe} className="btn-random">
-        🔄 Nouvelle Recette
+        Nouvelle Recette
       </button>
 
       {!recipe ? (

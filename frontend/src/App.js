@@ -8,8 +8,8 @@ function App() {
   return (
     <div>
       <nav className="navbar">
-        <button onClick={() => setPage("home")}>📚 Recettes</button>
-        <button onClick={() => setPage("random")}>🎲 Recette aléatoire</button>
+        <button onClick={() => setPage("home")}>Recettes</button>
+        <button onClick={() => setPage("random")}>Recette aléatoire</button>
       </nav>
 
       {page === "home" ? <RecipeList /> : <RandomRecipe />}
