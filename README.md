@@ -47,10 +47,10 @@ Une fois `docker compose up --build` lancé, tu peux accéder à :
   👉 [http://localhost:3000](http://localhost:3000)
 
 * **Backend API (Express)** :
-  👉 [http://localhost:5000/api/recipes](http://localhost:5000/api/recipes)
+  👉 [http://localhost:5001/api/recipes](http://localhost:5001/api/recipes)
 
 * **MongoDB** :
-  exposé sur `localhost:27018` (si tu veux te connecter avec un client type MongoDB Compass)
+  exposé sur `localhost:27017` (si tu veux te connecter avec un client type MongoDB Compass)
 
 ---
 
@@ -73,6 +73,7 @@ curl -X POST http://localhost:5000/api/recipes \
     "instructions": "Cuire les pâtes, préparer la sauce, mélanger."
   }'
 ```
+Ou faire directement dans la page
 
 ---
 
@@ -81,17 +82,17 @@ curl -X POST http://localhost:5000/api/recipes \
 * **mongodb**
 
   * image : `mongo:7`
-  * port exposé : `27018 -> 27017`
+  * port exposé : `27017
 * **backend**
 
   * Node.js / Express
-  * écoute sur `5000`
+  * écoute sur `5001` ( pour lancer sans problème sur MacOS)
   * communique avec Mongo via `mongodb://mongodb:27017/recipedb`
 * **frontend**
 
   * React
   * écoute sur `3000`
-  * consomme l’API : `http://localhost:5000/api/recipes`
+  * consomme l’API : `http://localhost:5001/api/recipes`
 
 ---
 
