@@ -117,7 +117,3 @@ docker compose down -v
 * Le code **backend** se trouve dans `/backend`
 * Le code **frontend** se trouve dans `/frontend`
 
-```
-
-Si tu veux, je peux te faire une version *“rapport de TP”* du README avec objectif pédagogique, explication de chaque service, et petit schéma ASCII.
-```
