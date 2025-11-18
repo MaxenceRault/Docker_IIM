@@ -35,11 +35,6 @@ const recipeSchema = new mongoose.Schema({
 
 const Recipe = mongoose.model("Recipe", recipeSchema);
 
-// ----------------------
-//  Routes API
-// ----------------------
-
-// GET ALL
 app.get("/api/recipes", async (req, res) => {
   try {
     const recipes = await Recipe.find().sort({ createdAt: -1 });
@@ -50,7 +45,7 @@ app.get("/api/recipes", async (req, res) => {
   }
 });
 
-// POST
+
 app.post("/api/recipes", async (req, res) => {
   try {
     const { name, ingredients, instructions } = req.body;
@@ -69,7 +64,7 @@ app.post("/api/recipes", async (req, res) => {
   }
 });
 
-// PUT
+
 app.put("/api/recipes/:id", async (req, res) => {
   try {
     const { name, ingredients, instructions } = req.body;
@@ -91,7 +86,6 @@ app.put("/api/recipes/:id", async (req, res) => {
   }
 });
 
-// DELETE
 app.delete("/api/recipes/:id", async (req, res) => {
   try {
     const deleted = await Recipe.findByIdAndDelete(req.params.id);
